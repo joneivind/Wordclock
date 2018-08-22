@@ -29,6 +29,7 @@ int timer = 0;
 int t = 0;
 float celsius1 = 0;
 int celsius = 0;
+int temperature_error = -3; // temperature calibration in degrees celsius
 
 boolean sleep = 0; //Sleep mode on off
 int sleep_sensitivity = 30; //0 - 1023 - Setter nedre verdi
@@ -163,7 +164,7 @@ void loop() {
     t = RTC.temperature();
     }
   celsius1 = t / 4.0;
-  celsius = celsius1;
+  celsius = celsius1 + temperature_error;
     
     
   
